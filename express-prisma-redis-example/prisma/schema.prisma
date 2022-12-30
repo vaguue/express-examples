@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DB_URL")
+}
+
+model User {
+  innerId  Int @id @default(autoincrement())
+  id       String @unique
+  password String
+  files    File[]
+}
+
+//название, расширение, MIME type, размер, дата загрузки;
+model File {
+  id           Int      @id @default(autoincrement())
+  storageName  String   @unique
+  name         String
+  ext          String
+  mimetype     String
+  size         Int
+  dateCreate   DateTime @default(now())
+  user         User     @relation(fields: [userId], references: [innerId], onDelete: Cascade, onUpdate: Cascade)
+  userId       Int
+}

@@ -1,0 +1,15 @@
+syntax = "proto3"; //Specify proto3 version.
+
+package phrase; 
+
+service PhraseService {
+  rpc getPhrase (PhraseRequest) returns (Phrase) {}
+}
+
+message Phrase {
+  string content = 1;
+}
+
+message PhraseRequest {
+  string token = 1;
+}

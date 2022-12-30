@@ -1,0 +1,6 @@
+.env
+node_modules
+local-test
+coverage
+storage
+scr.sh
