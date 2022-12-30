@@ -19,4 +19,6 @@ Examples list:
   * /file/update/:id [PUT] - update existing record and upload new file for this record.
   * /info [GET] - returns user id.
   * /logout [GET] - deactivate user's AT&RT. \
+
+
 NOTE: on each server Cors is configured to accept requests from any origin and there is an initdb.sh script for database initialization (TODO: user docker-compose.yml). And there is a exampleUsage.js file in test folder.
